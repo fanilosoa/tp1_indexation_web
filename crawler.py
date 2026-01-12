@@ -66,7 +66,7 @@ def save_results_to_json(results: List[Dict], filename: str = "crawler_output.js
     """
     Sauvegarde les résultats du crawler dans un fichier JSON.
     """
-    with open(filename, 'w', encoding='utf-8') as f:
+    with open(f"TP1/tp1_indexation_web/outputs/{filename}", 'w', encoding='utf-8') as f:
         json.dump(results, f, indent=2, ensure_ascii=False)
     print(f" Résultats sauvegardés dans {filename}")
 
