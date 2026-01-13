@@ -1,84 +1,66 @@
 import json
 import os
 from collections import defaultdict
-from typing import Dict, List, Any
+import nltk
+from nltk.corpus import stopwords
 
+# NLTK stopwords anglais
+STOPWORDS = set(stopwords.words('english'))
 
-class Indexeur:
-    def __init__(self, data_file: str = "products.jsonl", index_dir: str = "index"):
-        self.data_file = data_file
-        self.index_dir = index_dir
-        self.index: Dict[str, List[Dict[str, Any]]] = defaultdict(list)  # terme -> postings
-        self.docs: Dict[str, Dict[str, str]] = {}  # doc_id -> métadonnées
+def normaliser(texte):
+    """NLTK tokenisation + stopwords"""
+    if not texte:
+        return []
+    
+    # Minuscules + ponctuation
+    texte = texte.lower()
+    for c in ",.;:!?()[]{}\"'":
+        texte = texte.replace(c, " ")
+    
+    # NLTK tokenisation
+    tokens = nltk.word_tokenize(texte)
+    
+    # Filtre : alpha + >2 lettres + pas stopwords
+    return [t for t in tokens if t.isalpha() and len(t) > 2 and t not in STOPWORDS]
 
-    # --- chargement données ---
-    def charger_documents(self) -> List[Dict[str, Any]]:
-        """Chaque ligne de data.json est un JSON avec au moins url, title, description."""
-        with open(self.data_file, "r", encoding="utf-8") as f:
-            lignes = f.readlines()
-        docs = [json.loads(l) for l in lignes]
-        return docs
+def charger_documents(data_file="products.jsonl"):
+    """Charge products.jsonl"""
+    with open(data_file, "r", encoding="utf-8") as f:
+        lignes = f.readlines()
+    return [json.loads(l) for l in lignes if l.strip()]
 
-    # --- normalisation ---
-    def normaliser(self, texte: str) -> List[str]:
-        """Tokenisation très simple : minuscule + split espaces."""
-        if not texte:
-            return []
-        texte = texte.lower()
-        # option simple : remplacer ponctuation de base par espace
-        for c in ",.;:!?()[]{}\"'":
-            texte = texte.replace(c, " ")
-        tokens = [t for t in texte.split() if t]
-        return tokens
-
-    # --- construction index ---
-    def indexer(self) -> None:
-        docs = self.charger_documents()
-
-        for i, doc in enumerate(docs):
-            doc_id = f"doc_{i}"
-            url = doc.get("url", "")
-            title = doc.get("title", "")
-            desc = doc.get("description", "")
-
-            # enregistrer métadonnées document
-            self.docs[doc_id] = {
-                "url": url,
-                "title": title,
-                "description": desc,
-            }
-
-            # texte à indexer : titre + description (comme dans l’énoncé)
-            texte = f"{title} {desc}"
-            tokens = self.normaliser(texte)
-
-            # dictionnaire local terme -> liste positions
-            positions_par_terme: Dict[str, List[int]] = defaultdict(list)
-            for pos, tok in enumerate(tokens):
-                positions_par_terme[tok].append(pos)
-
-            # remplir l’index inversé
-            for terme, positions in positions_par_terme.items():
-                self.index[terme].append(
-                    {"doc_id": doc_id, "positions": positions}
-                )
-
-        self.sauvegarder_index()
-
-    # --- sauvegarde ---
-    def sauvegarder_index(self) -> None:
-        os.makedirs(self.index_dir, exist_ok=True)
-
-        # index inversé
-        with open(os.path.join(self.index_dir, "index_inverse.json"), "w", encoding="utf-8") as f:
-            json.dump(self.index, f, ensure_ascii=False, indent=2)
-
-        # métadonnées documents
-        with open(os.path.join(self.index_dir, "docs.json"), "w", encoding="utf-8") as f:
-            json.dump(self.docs, f, ensure_ascii=False, indent=2)
-
-        print(f"Index créé avec {len(self.index)} termes et {len(self.docs)} documents.")
+def indexer():
+    """Crée index_titre.json + index_description.json"""
+    docs = charger_documents()
+    index_titre = defaultdict(list)
+    index_description = defaultdict(list)
+    
+    for doc in docs:
+        url = doc.get("url", "")
+        
+        # Index titre
+        tokens_titre = normaliser(doc.get("title", ""))
+        for token in tokens_titre:
+            if url not in index_titre[token]:
+                index_titre[token].append(url)
+        
+        # Index description
+        tokens_desc = normaliser(doc.get("description", ""))
+        for token in tokens_desc:
+            if url not in index_description[token]:
+                index_description[token].append(url)
+    
+    # Sauvegarde
+    os.makedirs("index", exist_ok=True)
+    
+    with open("index/index_titre.json", "w", encoding="utf-8") as f:
+        json.dump(dict(index_titre), f, ensure_ascii=False, indent=2)
+    
+    with open("index/index_description.json", "w", encoding="utf-8") as f:
+        json.dump(dict(index_description), f, ensure_ascii=False, indent=2)
+    
+    nb_docs = len(docs)
+    print(f"Index NLTK créé : {len(index_titre)} termes titre, {len(index_description)} termes description, {nb_docs} docs")
 
 if __name__ == "__main__":
-    indexeur = Indexeur()
-    indexeur.indexer()
+    indexer()

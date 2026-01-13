@@ -1,0 +1,782 @@
+{
+  "doc_0": {
+    "nb_reviews": 0,
+    "avg_rating": 0.0,
+    "last_rating": 0
+  },
+  "doc_1": {
+    "nb_reviews": 5,
+    "avg_rating": 4.6,
+    "last_rating": 4
+  },
+  "doc_2": {
+    "nb_reviews": 4,
+    "avg_rating": 4.75,
+    "last_rating": 5
+  },
+  "doc_3": {
+    "nb_reviews": 5,
+    "avg_rating": 4.2,
+    "last_rating": 4
+  },
+  "doc_4": {
+    "nb_reviews": 5,
+    "avg_rating": 4.2,
+    "last_rating": 4
+  },
+  "doc_5": {
+    "nb_reviews": 5,
+    "avg_rating": 4.2,
+    "last_rating": 4
+  },
+  "doc_6": {
+    "nb_reviews": 5,
+    "avg_rating": 4.2,
+    "last_rating": 4
+  },
+  "doc_7": {
+    "nb_reviews": 5,
+    "avg_rating": 4.2,
+    "last_rating": 4
+  },
+  "doc_8": {
+    "nb_reviews": 5,
+    "avg_rating": 4.4,
+    "last_rating": 5
+  },
+  "doc_9": {
+    "nb_reviews": 5,
+    "avg_rating": 4.4,
+    "last_rating": 5
+  },
+  "doc_10": {
+    "nb_reviews": 5,
+    "avg_rating": 4.4,
+    "last_rating": 5
+  },
+  "doc_11": {
+    "nb_reviews": 5,
+    "avg_rating": 4.4,
+    "last_rating": 5
+  },
+  "doc_12": {
+    "nb_reviews": 5,
+    "avg_rating": 4.4,
+    "last_rating": 5
+  },
+  "doc_13": {
+    "nb_reviews": 5,
+    "avg_rating": 4.4,
+    "last_rating": 5
+  },
+  "doc_14": {
+    "nb_reviews": 5,
+    "avg_rating": 4.4,
+    "last_rating": 5
+  },
+  "doc_15": {
+    "nb_reviews": 5,
+    "avg_rating": 4.2,
+    "last_rating": 4
+  },
+  "doc_16": {
+    "nb_reviews": 5,
+    "avg_rating": 4.2,
+    "last_rating": 4
+  },
+  "doc_17": {
+    "nb_reviews": 5,
+    "avg_rating": 4.2,
+    "last_rating": 4
+  },
+  "doc_18": {
+    "nb_reviews": 5,
+    "avg_rating": 4.2,
+    "last_rating": 4
+  },
+  "doc_19": {
+    "nb_reviews": 5,
+    "avg_rating": 4.2,
+    "last_rating": 4
+  },
+  "doc_20": {
+    "nb_reviews": 5,
+    "avg_rating": 4.2,
+    "last_rating": 4
+  },
+  "doc_21": {
+    "nb_reviews": 5,
+    "avg_rating": 4.2,
+    "last_rating": 4
+  },
+  "doc_22": {
+    "nb_reviews": 5,
+    "avg_rating": 4.2,
+    "last_rating": 4
+  },
+  "doc_23": {
+    "nb_reviews": 5,
+    "avg_rating": 4.2,
+    "last_rating": 4
+  },
+  "doc_24": {
+    "nb_reviews": 5,
+    "avg_rating": 4.6,
+    "last_rating": 4
+  },
+  "doc_25": {
+    "nb_reviews": 5,
+    "avg_rating": 4.6,
+    "last_rating": 4
+  },
+  "doc_26": {
+    "nb_reviews": 5,
+    "avg_rating": 4.6,
+    "last_rating": 4
+  },
+  "doc_27": {
+    "nb_reviews": 5,
+    "avg_rating": 4.6,
+    "last_rating": 4
+  },
+  "doc_28": {
+    "nb_reviews": 5,
+    "avg_rating": 4.6,
+    "last_rating": 4
+  },
+  "doc_29": {
+    "nb_reviews": 5,
+    "avg_rating": 4.6,
+    "last_rating": 4
+  },
+  "doc_30": {
+    "nb_reviews": 5,
+    "avg_rating": 4.6,
+    "last_rating": 4
+  },
+  "doc_31": {
+    "nb_reviews": 4,
+    "avg_rating": 4.75,
+    "last_rating": 5
+  },
+  "doc_32": {
+    "nb_reviews": 4,
+    "avg_rating": 4.75,
+    "last_rating": 5
+  },
+  "doc_33": {
+    "nb_reviews": 4,
+    "avg_rating": 4.75,
+    "last_rating": 5
+  },
+  "doc_34": {
+    "nb_reviews": 4,
+    "avg_rating": 4.75,
+    "last_rating": 5
+  },
+  "doc_35": {
+    "nb_reviews": 4,
+    "avg_rating": 4.75,
+    "last_rating": 5
+  },
+  "doc_36": {
+    "nb_reviews": 4,
+    "avg_rating": 4.75,
+    "last_rating": 5
+  },
+  "doc_37": {
+    "nb_reviews": 4,
+    "avg_rating": 4.75,
+    "last_rating": 5
+  },
+  "doc_38": {
+    "nb_reviews": 4,
+    "avg_rating": 4.75,
+    "last_rating": 5
+  },
+  "doc_39": {
+    "nb_reviews": 5,
+    "avg_rating": 4.6,
+    "last_rating": 5
+  },
+  "doc_40": {
+    "nb_reviews": 5,
+    "avg_rating": 4.6,
+    "last_rating": 5
+  },
+  "doc_41": {
+    "nb_reviews": 5,
+    "avg_rating": 4.6,
+    "last_rating": 5
+  },
+  "doc_42": {
+    "nb_reviews": 4,
+    "avg_rating": 4.75,
+    "last_rating": 4
+  },
+  "doc_43": {
+    "nb_reviews": 4,
+    "avg_rating": 4.75,
+    "last_rating": 4
+  },
+  "doc_44": {
+    "nb_reviews": 4,
+    "avg_rating": 4.75,
+    "last_rating": 4
+  },
+  "doc_45": {
+    "nb_reviews": 5,
+    "avg_rating": 4.6,
+    "last_rating": 5
+  },
+  "doc_46": {
+    "nb_reviews": 5,
+    "avg_rating": 4.6,
+    "last_rating": 5
+  },
+  "doc_47": {
+    "nb_reviews": 5,
+    "avg_rating": 4.6,
+    "last_rating": 5
+  },
+  "doc_48": {
+    "nb_reviews": 5,
+    "avg_rating": 4.6,
+    "last_rating": 5
+  },
+  "doc_49": {
+    "nb_reviews": 5,
+    "avg_rating": 4.6,
+    "last_rating": 5
+  },
+  "doc_50": {
+    "nb_reviews": 5,
+    "avg_rating": 4.6,
+    "last_rating": 4
+  },
+  "doc_51": {
+    "nb_reviews": 5,
+    "avg_rating": 4.6,
+    "last_rating": 4
+  },
+  "doc_52": {
+    "nb_reviews": 5,
+    "avg_rating": 4.6,
+    "last_rating": 4
+  },
+  "doc_53": {
+    "nb_reviews": 5,
+    "avg_rating": 4.6,
+    "last_rating": 4
+  },
+  "doc_54": {
+    "nb_reviews": 5,
+    "avg_rating": 4.6,
+    "last_rating": 4
+  },
+  "doc_55": {
+    "nb_reviews": 5,
+    "avg_rating": 4.6,
+    "last_rating": 4
+  },
+  "doc_56": {
+    "nb_reviews": 4,
+    "avg_rating": 4.75,
+    "last_rating": 5
+  },
+  "doc_57": {
+    "nb_reviews": 5,
+    "avg_rating": 4.2,
+    "last_rating": 4
+  },
+  "doc_58": {
+    "nb_reviews": 5,
+    "avg_rating": 4.2,
+    "last_rating": 4
+  },
+  "doc_59": {
+    "nb_reviews": 5,
+    "avg_rating": 4.2,
+    "last_rating": 4
+  },
+  "doc_60": {
+    "nb_reviews": 5,
+    "avg_rating": 4.2,
+    "last_rating": 4
+  },
+  "doc_61": {
+    "nb_reviews": 5,
+    "avg_rating": 4.2,
+    "last_rating": 4
+  },
+  "doc_62": {
+    "nb_reviews": 5,
+    "avg_rating": 4.2,
+    "last_rating": 4
+  },
+  "doc_63": {
+    "nb_reviews": 5,
+    "avg_rating": 4.2,
+    "last_rating": 4
+  },
+  "doc_64": {
+    "nb_reviews": 5,
+    "avg_rating": 4.2,
+    "last_rating": 4
+  },
+  "doc_65": {
+    "nb_reviews": 5,
+    "avg_rating": 4.2,
+    "last_rating": 4
+  },
+  "doc_66": {
+    "nb_reviews": 5,
+    "avg_rating": 4.2,
+    "last_rating": 4
+  },
+  "doc_67": {
+    "nb_reviews": 5,
+    "avg_rating": 4.2,
+    "last_rating": 4
+  },
+  "doc_68": {
+    "nb_reviews": 5,
+    "avg_rating": 4.2,
+    "last_rating": 4
+  },
+  "doc_69": {
+    "nb_reviews": 5,
+    "avg_rating": 4.2,
+    "last_rating": 4
+  },
+  "doc_70": {
+    "nb_reviews": 5,
+    "avg_rating": 4.2,
+    "last_rating": 4
+  },
+  "doc_71": {
+    "nb_reviews": 5,
+    "avg_rating": 4.2,
+    "last_rating": 4
+  },
+  "doc_72": {
+    "nb_reviews": 5,
+    "avg_rating": 4.4,
+    "last_rating": 5
+  },
+  "doc_73": {
+    "nb_reviews": 5,
+    "avg_rating": 4.4,
+    "last_rating": 5
+  },
+  "doc_74": {
+    "nb_reviews": 5,
+    "avg_rating": 4.4,
+    "last_rating": 5
+  },
+  "doc_75": {
+    "nb_reviews": 5,
+    "avg_rating": 4.4,
+    "last_rating": 5
+  },
+  "doc_76": {
+    "nb_reviews": 5,
+    "avg_rating": 4.4,
+    "last_rating": 5
+  },
+  "doc_77": {
+    "nb_reviews": 5,
+    "avg_rating": 4.4,
+    "last_rating": 5
+  },
+  "doc_78": {
+    "nb_reviews": 5,
+    "avg_rating": 4.4,
+    "last_rating": 5
+  },
+  "doc_79": {
+    "nb_reviews": 5,
+    "avg_rating": 4.2,
+    "last_rating": 4
+  },
+  "doc_80": {
+    "nb_reviews": 5,
+    "avg_rating": 4.2,
+    "last_rating": 4
+  },
+  "doc_81": {
+    "nb_reviews": 5,
+    "avg_rating": 4.2,
+    "last_rating": 4
+  },
+  "doc_82": {
+    "nb_reviews": 5,
+    "avg_rating": 4.2,
+    "last_rating": 4
+  },
+  "doc_83": {
+    "nb_reviews": 5,
+    "avg_rating": 4.2,
+    "last_rating": 4
+  },
+  "doc_84": {
+    "nb_reviews": 5,
+    "avg_rating": 4.2,
+    "last_rating": 4
+  },
+  "doc_85": {
+    "nb_reviews": 5,
+    "avg_rating": 4.2,
+    "last_rating": 4
+  },
+  "doc_86": {
+    "nb_reviews": 5,
+    "avg_rating": 4.2,
+    "last_rating": 4
+  },
+  "doc_87": {
+    "nb_reviews": 5,
+    "avg_rating": 4.2,
+    "last_rating": 4
+  },
+  "doc_88": {
+    "nb_reviews": 5,
+    "avg_rating": 4.6,
+    "last_rating": 4
+  },
+  "doc_89": {
+    "nb_reviews": 5,
+    "avg_rating": 4.6,
+    "last_rating": 4
+  },
+  "doc_90": {
+    "nb_reviews": 5,
+    "avg_rating": 4.6,
+    "last_rating": 4
+  },
+  "doc_91": {
+    "nb_reviews": 5,
+    "avg_rating": 4.6,
+    "last_rating": 4
+  },
+  "doc_92": {
+    "nb_reviews": 5,
+    "avg_rating": 4.6,
+    "last_rating": 4
+  },
+  "doc_93": {
+    "nb_reviews": 5,
+    "avg_rating": 4.6,
+    "last_rating": 4
+  },
+  "doc_94": {
+    "nb_reviews": 5,
+    "avg_rating": 4.6,
+    "last_rating": 4
+  },
+  "doc_95": {
+    "nb_reviews": 4,
+    "avg_rating": 4.75,
+    "last_rating": 5
+  },
+  "doc_96": {
+    "nb_reviews": 4,
+    "avg_rating": 4.75,
+    "last_rating": 5
+  },
+  "doc_97": {
+    "nb_reviews": 4,
+    "avg_rating": 4.75,
+    "last_rating": 5
+  },
+  "doc_98": {
+    "nb_reviews": 4,
+    "avg_rating": 4.75,
+    "last_rating": 5
+  },
+  "doc_99": {
+    "nb_reviews": 4,
+    "avg_rating": 4.75,
+    "last_rating": 5
+  },
+  "doc_100": {
+    "nb_reviews": 4,
+    "avg_rating": 4.75,
+    "last_rating": 5
+  },
+  "doc_101": {
+    "nb_reviews": 4,
+    "avg_rating": 4.75,
+    "last_rating": 5
+  },
+  "doc_102": {
+    "nb_reviews": 4,
+    "avg_rating": 4.75,
+    "last_rating": 5
+  },
+  "doc_103": {
+    "nb_reviews": 4,
+    "avg_rating": 4.75,
+    "last_rating": 5
+  },
+  "doc_104": {
+    "nb_reviews": 4,
+    "avg_rating": 4.75,
+    "last_rating": 5
+  },
+  "doc_105": {
+    "nb_reviews": 4,
+    "avg_rating": 4.75,
+    "last_rating": 5
+  },
+  "doc_106": {
+    "nb_reviews": 4,
+    "avg_rating": 4.75,
+    "last_rating": 5
+  },
+  "doc_107": {
+    "nb_reviews": 4,
+    "avg_rating": 4.75,
+    "last_rating": 5
+  },
+  "doc_108": {
+    "nb_reviews": 4,
+    "avg_rating": 4.75,
+    "last_rating": 5
+  },
+  "doc_109": {
+    "nb_reviews": 4,
+    "avg_rating": 4.75,
+    "last_rating": 5
+  },
+  "doc_110": {
+    "nb_reviews": 4,
+    "avg_rating": 4.75,
+    "last_rating": 5
+  },
+  "doc_111": {
+    "nb_reviews": 4,
+    "avg_rating": 4.75,
+    "last_rating": 5
+  },
+  "doc_112": {
+    "nb_reviews": 5,
+    "avg_rating": 4.6,
+    "last_rating": 5
+  },
+  "doc_113": {
+    "nb_reviews": 5,
+    "avg_rating": 4.6,
+    "last_rating": 5
+  },
+  "doc_114": {
+    "nb_reviews": 5,
+    "avg_rating": 4.6,
+    "last_rating": 5
+  },
+  "doc_115": {
+    "nb_reviews": 4,
+    "avg_rating": 4.75,
+    "last_rating": 4
+  },
+  "doc_116": {
+    "nb_reviews": 4,
+    "avg_rating": 4.75,
+    "last_rating": 4
+  },
+  "doc_117": {
+    "nb_reviews": 4,
+    "avg_rating": 4.75,
+    "last_rating": 4
+  },
+  "doc_118": {
+    "nb_reviews": 5,
+    "avg_rating": 4.6,
+    "last_rating": 5
+  },
+  "doc_119": {
+    "nb_reviews": 5,
+    "avg_rating": 4.6,
+    "last_rating": 5
+  },
+  "doc_120": {
+    "nb_reviews": 5,
+    "avg_rating": 4.6,
+    "last_rating": 5
+  },
+  "doc_121": {
+    "nb_reviews": 5,
+    "avg_rating": 4.6,
+    "last_rating": 5
+  },
+  "doc_122": {
+    "nb_reviews": 5,
+    "avg_rating": 4.6,
+    "last_rating": 5
+  },
+  "doc_123": {
+    "nb_reviews": 5,
+    "avg_rating": 4.2,
+    "last_rating": 4
+  },
+  "doc_124": {
+    "nb_reviews": 5,
+    "avg_rating": 4.2,
+    "last_rating": 4
+  },
+  "doc_125": {
+    "nb_reviews": 5,
+    "avg_rating": 4.2,
+    "last_rating": 4
+  },
+  "doc_126": {
+    "nb_reviews": 5,
+    "avg_rating": 4.2,
+    "last_rating": 4
+  },
+  "doc_127": {
+    "nb_reviews": 5,
+    "avg_rating": 4.2,
+    "last_rating": 4
+  },
+  "doc_128": {
+    "nb_reviews": 5,
+    "avg_rating": 4.2,
+    "last_rating": 4
+  },
+  "doc_129": {
+    "nb_reviews": 5,
+    "avg_rating": 4.2,
+    "last_rating": 4
+  },
+  "doc_130": {
+    "nb_reviews": 5,
+    "avg_rating": 4.2,
+    "last_rating": 4
+  },
+  "doc_131": {
+    "nb_reviews": 5,
+    "avg_rating": 4.2,
+    "last_rating": 4
+  },
+  "doc_132": {
+    "nb_reviews": 5,
+    "avg_rating": 4.2,
+    "last_rating": 4
+  },
+  "doc_133": {
+    "nb_reviews": 0,
+    "avg_rating": 0.0,
+    "last_rating": 0
+  },
+  "doc_134": {
+    "nb_reviews": 0,
+    "avg_rating": 0.0,
+    "last_rating": 0
+  },
+  "doc_135": {
+    "nb_reviews": 0,
+    "avg_rating": 0.0,
+    "last_rating": 0
+  },
+  "doc_136": {
+    "nb_reviews": 0,
+    "avg_rating": 0.0,
+    "last_rating": 0
+  },
+  "doc_137": {
+    "nb_reviews": 0,
+    "avg_rating": 0.0,
+    "last_rating": 0
+  },
+  "doc_138": {
+    "nb_reviews": 0,
+    "avg_rating": 0.0,
+    "last_rating": 0
+  },
+  "doc_139": {
+    "nb_reviews": 0,
+    "avg_rating": 0.0,
+    "last_rating": 0
+  },
+  "doc_140": {
+    "nb_reviews": 0,
+    "avg_rating": 0.0,
+    "last_rating": 0
+  },
+  "doc_141": {
+    "nb_reviews": 0,
+    "avg_rating": 0.0,
+    "last_rating": 0
+  },
+  "doc_142": {
+    "nb_reviews": 0,
+    "avg_rating": 0.0,
+    "last_rating": 0
+  },
+  "doc_143": {
+    "nb_reviews": 0,
+    "avg_rating": 0.0,
+    "last_rating": 0
+  },
+  "doc_144": {
+    "nb_reviews": 0,
+    "avg_rating": 0.0,
+    "last_rating": 0
+  },
+  "doc_145": {
+    "nb_reviews": 0,
+    "avg_rating": 0.0,
+    "last_rating": 0
+  },
+  "doc_146": {
+    "nb_reviews": 0,
+    "avg_rating": 0.0,
+    "last_rating": 0
+  },
+  "doc_147": {
+    "nb_reviews": 0,
+    "avg_rating": 0.0,
+    "last_rating": 0
+  },
+  "doc_148": {
+    "nb_reviews": 0,
+    "avg_rating": 0.0,
+    "last_rating": 0
+  },
+  "doc_149": {
+    "nb_reviews": 0,
+    "avg_rating": 0.0,
+    "last_rating": 0
+  },
+  "doc_150": {
+    "nb_reviews": 0,
+    "avg_rating": 0.0,
+    "last_rating": 0
+  },
+  "doc_151": {
+    "nb_reviews": 0,
+    "avg_rating": 0.0,
+    "last_rating": 0
+  },
+  "doc_152": {
+    "nb_reviews": 0,
+    "avg_rating": 0.0,
+    "last_rating": 0
+  },
+  "doc_153": {
+    "nb_reviews": 0,
+    "avg_rating": 0.0,
+    "last_rating": 0
+  },
+  "doc_154": {
+    "nb_reviews": 0,
+    "avg_rating": 0.0,
+    "last_rating": 0
+  },
+  "doc_155": {
+    "nb_reviews": 0,
+    "avg_rating": 0.0,
+    "last_rating": 0
+  }
+}
