@@ -1,29 +1,32 @@
 import json
-from index_utils import normaliser_feature, charger_tous_index, charger_synonymes
+from index_utils import normaliser_feature, charger_tous_index, charger_synonymes, charger_stopwords
 from collections import defaultdict
 
-# Traitement de la requête: tokenization, normalisation, synonymes)
+# Traitement de la requête: tokenization, normalisation, synonymes
 def traiter_requete(requete, synonymes):
-    """
-    Tokenize + Normalise + Augmente synonymes origine
-    
-    Ex: "fr italy cotton" -> ['france', 'f', 'fr', 'italy', 'italia', 'cotton']
-    """
-    # Tokenization + normalisation
+    """Tokenisation + Normalisation + Augmentation synonymes"""
     tokens = normaliser_feature(requete)
-    
-    # Augmentation synonymes avec origin_synonyms.json
     tokens_augmente = []
-    for token in tokens:
-        tokens_augmente.append(token)  # Token original
-        if token in synonymes:        # Si synonymes origine
-            tokens_augmente.extend(synonymes[token])
     
-    return list(set(tokens_augmente))  # pas de doublons
+    for token in tokens:
+        tokens_augmente.append(token)  # Original
+        
+        # Sens 1: token -> synonymes[token]
+        if token in synonymes:
+            for syn in synonymes[token]:
+                tokens_augmente.append(syn)
+        
+        # Sens 2: token est synonyme -> forme complète
+        for forme_complete, liste_syn in synonymes.items():
+            if token in liste_syn:
+                tokens_augmente.append(forme_complete)
+    
+    return list(set(tokens_augmente))
 
-def filtre_au_moins_un_token(tokens, tous_index):
+
+def filtre_au_moins_un_token(tokens, tous_index, test = True):
     """
-    Retourne docs contenant au moins 1 des tokens
+    Retourne les documents contenant au moins 1 des tokens
     """
     docs_candidats = set()
     
@@ -32,18 +35,17 @@ def filtre_au_moins_un_token(tokens, tous_index):
             if token in index:
                 docs_candidats.update(index[token])
     
-    print(f"   -> {len(tokens)} tokens -> {len(docs_candidats)} docs candidats")
+    if test:
+        print(f"   -> {len(tokens)} tokens -> {len(docs_candidats)} docs candidats")
     return list(docs_candidats)
 
-def charger_stopwords(chemin="data/stopwords_nltk.json"):
-    with open(chemin, 'r') as f:
-        return set(json.load(f))
 
-
-def filtre_tous_tokens_sauf_stopwords(tokens, docs_candidats, tous_index, stopwords):
+def filtre_tous_tokens_sauf_stopwords(tokens, docs_candidats, tous_index, stopwords, test = True):
     docs_finaux = set()
     tokens_essentiels = [t for t in tokens if t not in stopwords]
-    print(f"   -> Tokens essentiels: {tokens_essentiels}") # tokens qui ne sont pas des stopwords
+
+    if test:
+        print(f"   -> Tokens essentiels: {tokens_essentiels}") # tokens qui ne sont pas des stopwords
     
     for doc_url in docs_candidats:
         doc_match = True
@@ -63,17 +65,20 @@ def filtre_tous_tokens_sauf_stopwords(tokens, docs_candidats, tous_index, stopwo
         if doc_match:
             docs_finaux.add(doc_url)
     
-    print(f"   -> {len(docs_candidats)} candidats -> {len(docs_finaux)} docs finaux")
+    if test:
+        print(f"   -> {len(docs_candidats)} candidats -> {len(docs_finaux)} docs finaux")
     return list(docs_finaux)
 
 
 
 # Pipeline de filtrage
-def filtrer_documents(requete, tous_index, synonymes, chemin_stopwords="data/stopwords_nltk.json"):
-    print(f"\n Filtrage : '{requete}'")
+def filtrer_documents(requete, tous_index, synonymes, chemin_stopwords="data/stopwords_nltk.json", test = True):
+    if test:
+        print(f"\n Filtrage : '{requete}'")
     
     tokens = traiter_requete(requete, synonymes)
-    print(f"   -> Tokens: {tokens}")
+    if test:
+        print(f"   -> Tokens: {tokens}")
     
     stopwords = charger_stopwords(chemin_stopwords)
     docs_candidats = filtre_au_moins_un_token(tokens, tous_index)
@@ -83,8 +88,7 @@ def filtrer_documents(requete, tous_index, synonymes, chemin_stopwords="data/sto
 
 # Test partie 2
 def tester_partie2():
-    """Teste filtrage complet"""
-    print("=== TEST PARTIE 2 ===")
+    print("=== TEST PARTIE 2 - Filtrage ===")
     
     # Charger Partie 1
     tous_index = charger_tous_index("input")

@@ -32,7 +32,7 @@ def charger_tous_index(dossier_data="input"):
     
     return tous_index
 
-# Chargement des synonymes et des products
+# Chargement des index, des synonymes, des products et des stopwords
 def charger_index(chemin):
     """Charge 1 index json -> dict{token: [doc_ids]}"""
     try:
@@ -46,24 +46,30 @@ def charger_synonymes(chemin):
     """Charge origin_synonyms.json"""
     return charger_index(chemin)
 
-def charger_products(chemin):
-    """Charge rearranged_products.jsonl -> dict{doc_id: infos}"""
+def charger_products(chemin="input/rearranged_products.jsonl"):
+    """Charge rearranged_products.jsonl"""
     products = {}
     try:
         with open(chemin, 'r', encoding='utf-8') as f:
             for i, line in enumerate(f):
                 doc = json.loads(line.strip())
-                products[str(i)] = {
+                doc_url = doc.get('url', f'doc_{i}')
+                products[doc_url] = {
                     'titre': doc.get('title', ''),
                     'description': doc.get('description', ''),
-                    'url': doc.get('url', doc.get('asin', f'doc_{i}')),
-                    'features': doc.get('productfeatures', {})
+                    'url': doc_url,
+                    'features': doc.get('product_features', {})
                 }
         print(f" {len(products)} produits chargés")
         return products
     except FileNotFoundError:
-        print(f" Fichier {chemin} manquant !")
+        print(f"  Fichier {chemin} manquant !")
         return {}
+
+
+def charger_stopwords(chemin="data/stopwords_nltk.json"):
+    with open(chemin, 'r') as f:
+        return set(json.load(f))
 
 # Normalisation
 def normaliser_feature(valeur):
@@ -92,7 +98,7 @@ def generer_stopwords(chemin_sortie="data/stopwords_nltk.json"):
 
 # Test partie 1
 def tester_partie1():
-    print("=== TEST PARTIE 1 - 6 INDEX ===")
+    print("=== TEST PARTIE 1 ===")
     
     # Chargement des 6 index
     print("\n1. Chargement 6 index")
@@ -115,7 +121,8 @@ def tester_partie1():
     products = charger_products("input/rearranged_products.jsonl")
     print(f"   -> {len(products)} documents disponibles")
     if products:
-        print(f"   -> Ex doc_0: {list(products['0'].keys())}")
+        premier_doc = list(products.keys())[0]
+        print(f"   -> Ex 1er doc: {list(products[premier_doc].keys())}({premier_doc[:50]}...)")
     
     # Stopwords
     print("\n5. Stopwords NLTK")
