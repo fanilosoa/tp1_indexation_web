@@ -1,0 +1,66 @@
+{
+  "metadata": {
+    "requete": "italy",
+    "tokens_essentiels": [
+      "italy"
+    ],
+    "nombre_total_documents": 156,
+    "documents_candidats": 21,
+    "documents_finaux": 21,
+    "documents_retournes": 3,
+    "top_k": 3,
+    "poids_config": {
+      "titre": 4.0,
+      "description": 1.0,
+      "origin": 5.0,
+      "reviews": 0.5
+    }
+  },
+  "documents": [
+    {
+      "rang": 1,
+      "titre": "Classic Leather Sneakers",
+      "url": "https://web-scraping.dev/product/11",
+      "description": "Whether you're dressing up for a formal event or going for a casual outing, these sneakers will complement your look perfectly. Made from premium genuine leather, these sneakers offer both comfort and durability. Step out in style with these timeless classic leather sneakers",
+      "score_ranking": 11.96,
+      "origine": "Italy",
+      "reviews": 0,
+      "score_breakdown": {
+        "bm25": 11.93,
+        "exact_match": 0.0,
+        "reviews": 0.0,
+        "tie_breaker": 0.03
+      }
+    },
+    {
+      "rang": 2,
+      "titre": "Classic Leather Sneakers",
+      "url": "https://web-scraping.dev/product/23",
+      "description": "Whether you're dressing up for a formal event or going for a casual outing, these sneakers will complement your look perfectly. Step out in style with these timeless classic leather sneakers. Made from premium genuine leather, these sneakers offer both comfort and durability",
+      "score_ranking": 11.96,
+      "origine": "Italy",
+      "reviews": 0,
+      "score_breakdown": {
+        "bm25": 11.93,
+        "exact_match": 0.0,
+        "reviews": 0.0,
+        "tie_breaker": 0.03
+      }
+    },
+    {
+      "rang": 3,
+      "titre": "Classic Leather Sneakers - White41",
+      "url": "https://web-scraping.dev/product/23?variant=white41",
+      "description": "The sleek design and neutral color make them versatile for any occasion. Made from premium genuine leather, these sneakers offer both comfort and durability. Step out in style with these timeless classic leather sneakers",
+      "score_ranking": 11.95,
+      "origine": "Italy",
+      "reviews": 0,
+      "score_breakdown": {
+        "bm25": 11.93,
+        "exact_match": 0.0,
+        "reviews": 0.0,
+        "tie_breaker": 0.03
+      }
+    }
+  ]
+}

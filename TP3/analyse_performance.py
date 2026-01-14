@@ -1,6 +1,7 @@
+import json
 from index_utils import charger_tous_index, charger_synonymes, charger_products, charger_stopwords
 from filtre import traiter_requete, filtre_au_moins_un_token, filtre_tous_tokens_sauf_stopwords
-from ranking import rank_documents
+from ranking import rank_documents, rank_documents_json, normaliser_feature
 
 
 JEUX_REQUETES = {
@@ -8,6 +9,23 @@ JEUX_REQUETES = {
     "multi": ["chocolate italy", "cherry large", "orange medium"],
     "synonymes": ["fr", "usa", "it"]
 }
+
+def analyser_requete_json(requete, docs_finaux, tous_index, products):
+    """Test une requête + affiche JSON"""
+    tokens = normaliser_feature(requete)
+    resultats = rank_documents_json(docs_finaux, tokens, tous_index, products, top_k=3)
+    
+    print(f"\n '{requete}' -> JSON :")
+    print(json.dumps(resultats, indent=2, ensure_ascii=False)[:1000] + "...")
+    
+    return resultats
+
+# Fonction pour sauvegarder
+def sauvegarder_resultats_json(resultats, nom_fichier="resultats_ranking.json"):
+    """Sauvegarde résultats formatés en JSON"""
+    with open(f"output/{nom_fichier}", "w", encoding="utf-8") as f:
+        json.dump(resultats, f, indent=2, ensure_ascii=False)
+    print(f" Résultats sauvegardés : {nom_fichier}")
 
 def etape1_jeu_requetes():
     print("=== ÉTAPE 1: JEU DE REQUÊTES TEST ===")
@@ -43,6 +61,8 @@ def etape2_scores_ranking():
         "italy", 
         "cherry"
     ]
+
+    all_results = {}
     
     for req in requetes_scores:
         print(f"\n '{req}'")
@@ -64,6 +84,12 @@ def etape2_scores_ranking():
                 print(f"     {i}. {score:6.2f} | {titre}")
         else:
             print("    AUCUN document ranké")
+
+        resultats_json = analyser_requete_json(req, docs_finaux, tous_index, products)
+        all_results[req] = resultats_json
+        sauvegarder_resultats_json(resultats_json, f"resultats_{req.replace(' ', '_')}.json")
+    
+    sauvegarder_resultats_json({"requetes": all_results}, "resultats_complets_tp3.json")
 
 
 if __name__ == "__main__":

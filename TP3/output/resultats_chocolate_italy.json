@@ -1,0 +1,52 @@
+{
+  "metadata": {
+    "requete": "chocolate italy",
+    "tokens_essentiels": [
+      "chocolate",
+      "italy"
+    ],
+    "nombre_total_documents": 156,
+    "documents_candidats": 2,
+    "documents_finaux": 2,
+    "documents_retournes": 2,
+    "top_k": 3,
+    "poids_config": {
+      "titre": 4.0,
+      "description": 1.0,
+      "origin": 5.0,
+      "reviews": 0.5
+    }
+  },
+  "documents": [
+    {
+      "rang": 1,
+      "titre": "Box of Chocolate Candy - Cherry medium",
+      "url": "https://web-scraping.dev/product/25?variant=cherry-medium",
+      "description": "Each box contains an assortment of rich, flavorful chocolates with a smooth, creamy filling. Whether you're looking for the perfect gift or just want to treat yourself, our box of chocolate candy is sure to satisfy. Choose from a variety of flavors including zesty orange and sweet cherry",
+      "score_ranking": 22.56,
+      "origine": "italy",
+      "reviews": 0,
+      "score_breakdown": {
+        "bm25": 22.46,
+        "exact_match": 0.5,
+        "reviews": 0.0,
+        "tie_breaker": 0.1
+      }
+    },
+    {
+      "rang": 2,
+      "titre": "Box of Chocolate Candy - Cherry small",
+      "url": "https://web-scraping.dev/product/1?variant=cherry-small",
+      "description": "Whether you're looking for the perfect gift or just want to treat yourself, our box of chocolate candy is sure to satisfy. Choose from a variety of flavors including zesty orange and sweet cherry. Each box contains an assortment of rich, flavorful chocolates with a smooth, creamy filling",
+      "score_ranking": 22.56,
+      "origine": "italy",
+      "reviews": 0,
+      "score_breakdown": {
+        "bm25": 22.46,
+        "exact_match": 0.5,
+        "reviews": 0.0,
+        "tie_breaker": 0.1
+      }
+    }
+  ]
+}

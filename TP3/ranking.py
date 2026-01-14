@@ -1,4 +1,5 @@
 import math
+import json
 from index_utils import normaliser_feature, charger_products
 
 # Calcul du score BM25
@@ -133,3 +134,56 @@ def rank_documents(docs_finaux, tokens_essentiels, tous_index, products, top_k=1
     ]
     scored.sort(key=lambda x: x[1], reverse=True)
     return scored[:top_k]
+
+def rank_documents_json(docs_finaux, tokens_essentiels, tous_index, products, top_k=10):
+    """
+    Ranking + formatage JSON pour le livrable
+    """
+
+    scored = [
+        (doc_url, score_document(doc_url, tokens_essentiels, tous_index, products))
+        for doc_url in docs_finaux
+    ]
+    scored.sort(key=lambda x: x[1], reverse=True)
+    top_docs = scored[:top_k]
+    
+    # Construction résultats JSON
+    resultats = {
+        "metadata": {
+            "requete": " ".join(tokens_essentiels),
+            "tokens_essentiels": tokens_essentiels,
+            "nombre_total_documents": len(products),
+            "documents_candidats": len(docs_finaux),
+            "documents_finaux": len(docs_finaux),
+            "documents_retournes": len(top_docs),
+            "top_k": top_k,
+            "poids_config": {
+                "titre": 4.0,
+                "description": 1.0,
+                "origin": 5.0,
+                "reviews": 0.5
+            }
+        },
+        "documents": []
+    }
+    
+    # Formatage chaque document
+    for i, (doc_url, score) in enumerate(top_docs, 1):
+        doc = products[doc_url]
+        resultats["documents"].append({
+            "rang": i,
+            "titre": doc.get("titre", ""),
+            "url": doc_url,
+            "description": doc.get("description", ""),
+            "score_ranking": round(float(score), 2),
+            "origine": doc.get("features", {}).get("made in", ""),
+            "reviews": len(doc.get("reviews", [])),
+            "score_breakdown": {
+                "bm25": round(float(score - tie_breaker_bonus(doc_url, tokens_essentiels, products) - 0.5 * reviews_score(doc_url, products)), 2),
+                "exact_match": round(float(exact_match_bonus(doc_url, tokens_essentiels, products)), 2),
+                "reviews": round(float(0.5 * reviews_score(doc_url, products)), 2),
+                "tie_breaker": round(float(tie_breaker_bonus(doc_url, tokens_essentiels, products)), 2)
+            }
+        })
+    
+    return resultats
